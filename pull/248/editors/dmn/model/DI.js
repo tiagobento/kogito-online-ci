@@ -4,6 +4,16 @@ var DI_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DI\/',
     dependencies: ['DC'],
     typeInfos: [{
+        localName: 'DiagramElement.Extension',
+        typeName: null,
+        propertyInfos: [{
+            name: 'any',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            type: 'anyElement'
+          }]
+      }, {
         localName: 'Style.Extension',
         typeName: null,
         propertyInfos: [{
@@ -14,44 +24,30 @@ var DI_Module_Factory = function () {
             type: 'anyElement'
           }]
       }, {
-        localName: 'Style',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'extension',
-            typeInfo: '.Style.Extension'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Shape',
+        localName: 'Diagram',
         baseTypeInfo: '.DiagramElement',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'bounds',
-            elementName: {
-              localPart: 'Bounds',
-              namespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/'
+            name: 'name',
+            attributeName: {
+              localPart: 'name'
             },
-            typeInfo: 'DC.Bounds'
-          }]
-      }, {
-        localName: 'DiagramElement.Extension',
-        typeName: null,
-        propertyInfos: [{
-            name: 'any',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            type: 'anyElement'
+            type: 'attribute'
+          }, {
+            name: 'documentation',
+            attributeName: {
+              localPart: 'documentation'
+            },
+            type: 'attribute'
+          }, {
+            name: 'resolution',
+            typeInfo: 'Double',
+            attributeName: {
+              localPart: 'resolution'
+            },
+            type: 'attribute'
           }]
       }, {
         localName: 'Edge',
@@ -96,28 +92,32 @@ var DI_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Diagram',
+        localName: 'Shape',
         baseTypeInfo: '.DiagramElement',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'name'
+            name: 'bounds',
+            elementName: {
+              localPart: 'Bounds',
+              namespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/'
             },
-            type: 'attribute'
+            typeInfo: 'DC.Bounds'
+          }]
+      }, {
+        localName: 'Style',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
           }, {
-            name: 'documentation',
-            attributeName: {
-              localPart: 'documentation'
-            },
-            type: 'attribute'
+            name: 'extension',
+            typeInfo: '.Style.Extension'
           }, {
-            name: 'resolution',
-            typeInfo: 'Double',
+            name: 'id',
+            typeInfo: 'ID',
             attributeName: {
-              localPart: 'resolution'
+              localPart: 'id'
             },
             type: 'attribute'
           }]
