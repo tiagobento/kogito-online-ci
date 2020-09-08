@@ -42,14 +42,18 @@ var DI_Module_Factory = function () {
             typeInfo: 'DC.Point'
           }]
       }, {
-        localName: 'Style.Extension',
-        typeName: null,
+        localName: 'Shape',
+        baseTypeInfo: '.DiagramElement',
         propertyInfos: [{
-            name: 'any',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            type: 'anyElement'
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'bounds',
+            elementName: {
+              localPart: 'Bounds',
+              namespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/'
+            },
+            typeInfo: 'DC.Bounds'
           }]
       }, {
         localName: 'DiagramElement',
@@ -82,6 +86,16 @@ var DI_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
+        localName: 'Style.Extension',
+        typeName: null,
+        propertyInfos: [{
+            name: 'any',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            type: 'anyElement'
+          }]
+      }, {
         localName: 'Diagram',
         baseTypeInfo: '.DiagramElement',
         propertyInfos: [{
@@ -106,20 +120,6 @@ var DI_Module_Factory = function () {
               localPart: 'resolution'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Shape',
-        baseTypeInfo: '.DiagramElement',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'bounds',
-            elementName: {
-              localPart: 'Bounds',
-              namespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/'
-            },
-            typeInfo: 'DC.Bounds'
           }]
       }],
     elementInfos: [{
