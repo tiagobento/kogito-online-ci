@@ -17,7 +17,7 @@ Os-Name: Linux
 Scm-Url: https://github.com/kiegroup/droolsjbpm-build-bootstrap/kie-wb
  -common/kie-wb-common-dmn/kie-wb-common-dmn-webapp-kogito-runtime
 Implementation-Vendor: JBoss by Red Hat
-Os-Version: 5.4.0-1023-azure
+Os-Version: 5.4.0-1025-azure
 Scm-Revision: d3cc6330ae2f7fd93719bcefe55cf8ba5dba7670
 Created-By: Apache Maven 3.6.3
 Build-Jdk: 1.8.0_265
