@@ -331,7 +331,7 @@ function org_drools_workbench_screens_scenariosimulation_webapp_DroolsWorkbenchS
     }
     var strongName;
     try {
-      strongName = 'C551DA5310C485DDE93B634071060BBC';
+      strongName = '8573742993984FD08F42CA6D9F03BB49';
       var idx = strongName.indexOf(':');
       if (idx != -1) {
         softPermutationId = parseInt(strongName.substring(idx + 1), 10);
@@ -364,6 +364,7 @@ function org_drools_workbench_screens_scenariosimulation_webapp_DroolsWorkbenchS
     installOneStylesheet('bootstrap-select/css/bootstrap-select.min.css');
     installOneStylesheet('prettify/bin/prettify.min.css');
     installOneStylesheet('uberfire-patternfly.css');
+    installOneStylesheet('monaco-editor/dev/vs/editor/editor.main.css');
     installOneStylesheet('css/patternfly.min.css');
     installOneStylesheet('css/patternfly-additions.min.css');
     installOneStylesheet('css/bootstrap-datepicker3-1.6.4.min.cache.css');
