@@ -22,6 +22,25 @@ var DC_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
+        localName: 'Point',
+        propertyInfos: [{
+            name: 'x',
+            required: true,
+            typeInfo: 'Double',
+            attributeName: {
+              localPart: 'x'
+            },
+            type: 'attribute'
+          }, {
+            name: 'y',
+            required: true,
+            typeInfo: 'Double',
+            attributeName: {
+              localPart: 'y'
+            },
+            type: 'attribute'
+          }]
+      }, {
         localName: 'Bounds',
         propertyInfos: [{
             name: 'x',
@@ -57,25 +76,6 @@ var DC_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Point',
-        propertyInfos: [{
-            name: 'x',
-            required: true,
-            typeInfo: 'Double',
-            attributeName: {
-              localPart: 'x'
-            },
-            type: 'attribute'
-          }, {
-            name: 'y',
-            required: true,
-            typeInfo: 'Double',
-            attributeName: {
-              localPart: 'y'
-            },
-            type: 'attribute'
-          }]
-      }, {
         localName: 'Color',
         propertyInfos: [{
             name: 'red',
@@ -104,16 +104,16 @@ var DC_Module_Factory = function () {
           }]
       }, {
         type: 'enumInfo',
-        localName: 'KnownColor',
-        values: ['maroon', 'red', 'orange', 'yellow', 'olive', 'purple', 'fuchsia', 'white', 'lime', 'green', 'navy', 'blue', 'aqua', 'teal', 'black', 'silver', 'gray']
-      }, {
-        type: 'enumInfo',
         localName: 'AlignmentKind',
         values: ['start', 'end', 'center']
+      }, {
+        type: 'enumInfo',
+        localName: 'KnownColor',
+        values: ['maroon', 'red', 'orange', 'yellow', 'olive', 'purple', 'fuchsia', 'white', 'lime', 'green', 'navy', 'blue', 'aqua', 'teal', 'black', 'silver', 'gray']
       }],
     elementInfos: [{
-        typeInfo: '.Color',
-        elementName: 'Color'
+        typeInfo: '.Bounds',
+        elementName: 'Bounds'
       }, {
         typeInfo: '.Point',
         elementName: 'Point'
@@ -121,8 +121,8 @@ var DC_Module_Factory = function () {
         typeInfo: '.Dimension',
         elementName: 'Dimension'
       }, {
-        typeInfo: '.Bounds',
-        elementName: 'Bounds'
+        typeInfo: '.Color',
+        elementName: 'Color'
       }]
   };
   return {
