@@ -4,30 +4,30 @@ var DI_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DI\/',
     dependencies: ['DC'],
     typeInfos: [{
-        localName: 'Diagram',
+        localName: 'Shape',
         baseTypeInfo: '.DiagramElement',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'name'
+            name: 'bounds',
+            elementName: {
+              localPart: 'Bounds',
+              namespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/'
             },
-            type: 'attribute'
+            typeInfo: 'DC.Bounds'
+          }]
+      }, {
+        localName: 'Edge',
+        baseTypeInfo: '.DiagramElement',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
           }, {
-            name: 'documentation',
-            attributeName: {
-              localPart: 'documentation'
-            },
-            type: 'attribute'
-          }, {
-            name: 'resolution',
-            typeInfo: 'Double',
-            attributeName: {
-              localPart: 'resolution'
-            },
-            type: 'attribute'
+            name: 'waypoint',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: 'DC.Point'
           }]
       }, {
         localName: 'Style.Extension',
@@ -80,30 +80,30 @@ var DI_Module_Factory = function () {
             type: 'anyElement'
           }]
       }, {
-        localName: 'Shape',
+        localName: 'Diagram',
         baseTypeInfo: '.DiagramElement',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'bounds',
-            elementName: {
-              localPart: 'Bounds',
-              namespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/'
+            name: 'name',
+            attributeName: {
+              localPart: 'name'
             },
-            typeInfo: 'DC.Bounds'
-          }]
-      }, {
-        localName: 'Edge',
-        baseTypeInfo: '.DiagramElement',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
+            type: 'attribute'
           }, {
-            name: 'waypoint',
-            minOccurs: 0,
-            collection: true,
-            typeInfo: 'DC.Point'
+            name: 'documentation',
+            attributeName: {
+              localPart: 'documentation'
+            },
+            type: 'attribute'
+          }, {
+            name: 'resolution',
+            typeInfo: 'Double',
+            attributeName: {
+              localPart: 'resolution'
+            },
+            type: 'attribute'
           }]
       }, {
         localName: 'Style',
