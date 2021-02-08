@@ -4,4 +4,4 @@ dependencies:
   - project: kiegroup/kogito-tooling
     dependencies:
       - project: kiegroup/kie-wb-common
-      - project: kiegroup/drools-wb
+      - project: kiegroup/drools-wb 
