@@ -22,5 +22,6 @@ build:
         export EXTERNAL_RESOURCE_PATH__dmnEditor=../kiegroup_kie-wb-common/kie-wb-common-dmn/kie-wb-common-dmn-webapp-kogito-runtime/target/kie-wb-common-dmn-webapp-kogito-runtime
         export EXTERNAL_RESOURCE_PATH__scesimEditor=../kigroupo_drools-wb/drools-wb-screens/drools-wb-scenario-simulation-editor/drools-wb-scenario-simulation-editor-kogito-runtime/target/drools-wb-scenario-simulation-editor-kogito-runtime
       current: |
+        rm -rf $HOME/.m2
         yarn run init
         yarn run build:prod
