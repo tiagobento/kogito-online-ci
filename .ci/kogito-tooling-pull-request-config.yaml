@@ -27,5 +27,6 @@ build:
       current: |
         /bin/bash -c "ls .. | grep -v kogito-tooling | grep -v kie-wb-common | grep -v drools-wb | xargs rm -rf"
         rm -rf $HOME/.m2
+        git fetch --depth=1 origin +refs/tags/*:refs/tags/*
         yarn run init
         yarn run build:prod
