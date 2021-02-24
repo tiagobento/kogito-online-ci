@@ -26,7 +26,7 @@ build:
         export EXTERNAL_RESOURCE_PATH__scesimEditor=../kigroupo_drools-wb/drools-wb-screens/drools-wb-scenario-simulation-editor/drools-wb-scenario-simulation-editor-kogito-runtime/target/drools-wb-scenario-simulation-editor-kogito-runtime
       current: |
         echo 'testing123'
-        ls .. | grep -v kogito-tooling | grep -v kie-wb-common | grep -v drools-wb | xargs rm -rf
+        /bin/bash -c "ls .. | grep -v kogito-tooling | grep -v kie-wb-common | grep -v drools-wb | xargs rm -rf"
         rm -rf $HOME/.m2
         yarn run init
         yarn run build:prod
