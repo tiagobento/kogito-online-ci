@@ -11,12 +11,16 @@ build:
   - project: kiegroup/kie-wb-common
     build-command:
       current: mvn -e -nsu -Dfull -Pwildfly clean install -Denforcer.skip -DskipTests -Prun-code-coverage  -Dcontainer.profile=wildfly -Dcontainer=wildfly -Dintegration-tests=true -Dmaven.test.failure.ignore=true -Dmaven.wagon.httpconnectionManager.ttlSeconds=25 -Dmaven.wagon.http.retryHandler.count=3 -am -pl kie-wb-common-stunner/kie-wb-common-stunner-sets/kie-wb-common-stunner-bpmn/kie-wb-common-stunner-bpmn-kogito-runtime,kie-wb-common-dmn/kie-wb-common-dmn-webapp-kogito-runtime 
-      after: echo 'TEST1'
+      after: 
+        current: echo 'TEST1'
+      merge: ['after']
 
   - project: kiegroup/drools-wb
     build-command:
       current: mvn -e -nsu -Dfull -Pwildfly clean install -Denforcer.skip -DskipTests -Prun-code-coverage  -Dcontainer.profile=wildfly -Dcontainer=wildfly -Dintegration-tests=true -Dmaven.test.failure.ignore=true -Dmaven.wagon.httpconnectionManager.ttlSeconds=25 -Dmaven.wagon.http.retryHandler.count=3 -pl drools-wb-screens/drools-wb-scenario-simulation-editor/drools-wb-scenario-simulation-editor-kogito-runtime -am
-      after: echo 'TEST2'
+      after:
+        current: echo 'TEST2'
+      merge: ['after']
 
   - project: kiegroup/kogito-tooling
     build-command:
