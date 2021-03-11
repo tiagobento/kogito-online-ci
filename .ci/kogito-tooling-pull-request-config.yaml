@@ -5,7 +5,9 @@ dependencies: ./kogito-tooling-project-dependencies.yaml
 default:
   build-command:
     current: mvn -e -T1C clean install -DskipTests -Denforcer.skip -Dgwt.compiler.skip=true -Dgwt.skipCompilation=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dspotbugs.skip=true -Drevapi.skip=true -Dmaven.wagon.httpconnectionManager.ttlSeconds=25 -Dmaven.wagon.http.retryHandler.count=3
-    after: rm -rf ./*
+    after:
+      upstream: rm -rf ./*
+      current: rm -rf ./*
 
 build:
   - project: kiegroup/kie-wb-common
