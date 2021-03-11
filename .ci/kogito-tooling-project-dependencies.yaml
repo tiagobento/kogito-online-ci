@@ -5,10 +5,3 @@ dependencies:
     dependencies:
       - project: kiegroup/kie-wb-common
       - project: kiegroup/drools-wb 
-      
-  - project: tiagobento/appformer
-    dependencies:    
-      - project: kiegroup/lienzo-core
-      - project: kiegroup/droolsjbpm-build-bootstrap
-      - project: kiegroup/lienzo-tests
-      - project: kiegroup/kie-soup
